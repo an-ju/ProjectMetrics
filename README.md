@@ -5,13 +5,13 @@ A proof of concept rails app to replace project_scope using an extendable plugin
 Could something like this work?
 
 
-# config.yml
+## config.yml
 
 ```yml
 sources: [ code_climate_project_metric, github_pr_metric, pivotal_tracker_project_metric, slack_project_metric ]
 ```
 
-Rails controller (just showing single project in first instance)
+## Rails controller (just showing single project in first instance)
 
 ```ruby
 def index
@@ -23,7 +23,7 @@ def index
 end
 ```
 
-Rails partial
+##Rails partial
 
 ```html
 <% sources.each do |source| %>
