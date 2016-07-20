@@ -27,7 +27,7 @@ end
 
 ```html
 <% sources.each do |source| %>
-   <p><%= source.scalar %></p><%= img source.img %>
+   <p><%= source.scalar %></p><%= image_tag source.img %>
 <% end %>
 ```
 
