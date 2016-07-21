@@ -3,22 +3,21 @@ require 'active_support/all'
 
 class ProjectMetric
 
-  @@metrics = []
+  @metrics = []
 
-  def self.metrics project_ids 
-    cnf = YAML::load_file('config.yml')
-    cnf['sources'].map do |source|
-       require source
+  def self.report project_ids 
+    @metrics.map do |source|
+      require source.to_s
     end
     project_ids.map do |project_id|
-      cnf['sources'].map do |source|
-         source.camelize.constantize.new(project_id)
+      @metrics.map do |source|
+         source.to_s.camelize.constantize.new(project_id)
       end
     end
   end
 
   def self.add_metric metric
-    @@metrics << metric
+    @metrics << metric
   end
 
   def self.configure
@@ -26,7 +25,11 @@ class ProjectMetric
   end
 
   def self.metrics
-    @@metrics
+    @metrics
+  end
+
+  def self.reset
+    @metrics = []
   end
 
 end
