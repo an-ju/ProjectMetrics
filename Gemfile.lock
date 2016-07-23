@@ -1,22 +1,15 @@
 GIT
-  remote: file:///Users/tansaku/Documents/GitHub/AgileVentures/code_climate_project_metrics
+  remote: https://github.com/AgileVentures/code_climate_project_metrics
   revision: c796edbe8b08d077b806da5ca7585cc2d9d9cac0
   specs:
     code_climate_project_metrics (0.0.1)
       httparty
 
 GIT
-  remote: file:///Users/tansaku/Documents/GitHub/AgileVentures/github_project_metrics
+  remote: https://github.com/AgileVentures/github_project_metrics
   revision: 51dc034bd9e4830453b8df551270efb1d470dd71
   specs:
     github_project_metrics (0.0.0)
-      httparty
-
-GIT
-  remote: https://github.com/AgileVentures/codeclimate_badges
-  revision: 88f15dfae8679a7895e8fa3cf6a9cb39f665745e
-  specs:
-    code_climate_badges (0.0.0)
       httparty
 
 GEM
@@ -58,7 +51,6 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport
-  code_climate_badges!
   code_climate_project_metrics!
   github_project_metrics!
   rspec
