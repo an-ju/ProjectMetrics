@@ -5,18 +5,27 @@ A plugin architecture to allow reporting over a range of project metrics.
 Configure the project metrics you want like so:
 
 ```rb
-  ProjectMetric.configure do |config|
-    config.add_metric :code_climate_project_metrics
-    config.add_metric :github_project_metrics
+  ProjectMetric.configure do 
+    add_metric :code_climate_project_metrics
+    add_metric :github_project_metrics
   end
 ```
 
 Then retrieve reports of those metrics for a number of projects like so:
 
 ```rb
-  ProjectMetric.report(['github/AgileVentures/WebsiteOne',
-                        'github/AgileVentures/LocalSupport'])
+  report = ProjectMetric.report(['https://github.com/AgileVentures/WebsiteOne',
+                                 'https://github.com/AgileVentures/LocalSupport'])
+
+  report.map{|p| [p.first.scalar, p.second.scalar]}
+                     
 ```  
+
+which at this stage returns something like the following:
+
+```sh
+  => [[3.5, 939], [3.2, 313]]  
+``` 
 
 ProjectMetric gems should follow these conventions:
 

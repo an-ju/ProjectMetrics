@@ -1,27 +1,30 @@
 GIT
   remote: https://github.com/AgileVentures/code_climate_project_metrics
-  revision: c796edbe8b08d077b806da5ca7585cc2d9d9cac0
+  revision: 6810e12aa70c8b48617304a4ff4952e9d7991719
   specs:
-    code_climate_project_metrics (0.0.1)
+    code_climate_project_metrics (0.0.2)
       httparty
 
 GIT
   remote: https://github.com/AgileVentures/github_project_metrics
-  revision: 51dc034bd9e4830453b8df551270efb1d470dd71
+  revision: faca0d357653598a2c984ecc329d7a7f5836b75f
   specs:
-    github_project_metrics (0.0.0)
-      httparty
+    github_project_metrics (0.0.2)
+      octokit
 
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (4.2.6)
+    activesupport (5.0.0)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (~> 0.7)
-      json (~> 1.7, >= 1.7.7)
       minitest (~> 5.1)
-      thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    addressable (2.4.0)
+    concurrent-ruby (1.0.2)
     diff-lcs (1.2.5)
+    faraday (0.9.2)
+      multipart-post (>= 1.2, < 3)
     httparty (0.13.7)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
@@ -29,6 +32,9 @@ GEM
     json (1.8.3)
     minitest (5.9.0)
     multi_xml (0.5.5)
+    multipart-post (2.0.0)
+    octokit (4.3.0)
+      sawyer (~> 0.7.0, >= 0.5.3)
     rspec (3.5.0)
       rspec-core (~> 3.5.0)
       rspec-expectations (~> 3.5.0)
@@ -42,6 +48,9 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.5.0)
     rspec-support (3.5.0)
+    sawyer (0.7.0)
+      addressable (>= 2.3.5, < 2.5)
+      faraday (~> 0.8, < 0.10)
     thread_safe (0.3.5)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
