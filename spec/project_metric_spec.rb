@@ -9,8 +9,8 @@ describe ProjectMetric do
   context 'when configured to report a single metric' do
     
     before do
-      described_class.configure do |config|
-        config.add_metric :code_climate_project_metrics
+      described_class.configure do 
+        add_metric :code_climate_project_metrics
       end
     end
 
@@ -34,9 +34,9 @@ describe ProjectMetric do
   context 'when configured to report multiple metrics' do
 
     before do
-      described_class.configure do |config|
-        config.add_metric :code_climate_project_metrics
-        config.add_metric :github_project_metrics
+      described_class.configure do 
+        add_metric :code_climate_project_metrics
+        add_metric :github_project_metrics
       end
     end
 

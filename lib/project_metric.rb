@@ -2,8 +2,8 @@ require 'active_support/all'
 
 class ProjectMetric
 
-  def self.configure
-    yield self
+  def self.configure &block
+    instance_eval &block
   end
 
   def self.metrics
