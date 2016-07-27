@@ -10,6 +10,10 @@ class ProjectMetrics
     @metrics
   end
 
+  def self.metric_names
+    @metrics.map &:to_s
+  end
+
   def self.report project_ids 
     require_metrics
     assemble_metrics_for project_ids

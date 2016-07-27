@@ -19,6 +19,13 @@ describe ProjectMetrics do
         expect(ProjectMetrics.metrics).to contain_exactly(:code_climate_project_metrics)
       end
     end
+
+    describe '.metric_names' do
+      it 'returns the single metric as a string' do
+        expect(ProjectMetrics.metric_names).to contain_exactly('code_climate_project_metrics')
+      end
+    end
+
     describe '.report' do
       subject(:report) { described_class.report(['github/AgileVentures/WebsiteOne']) }
       it 'can report scalar for a project metric' do
@@ -44,6 +51,13 @@ describe ProjectMetrics do
       it 'returns all the metrics in a list' do
         expect(ProjectMetrics.metrics).to contain_exactly(:code_climate_project_metrics,
                                                          :github_project_metrics)
+      end
+    end
+
+    describe '.metric_names' do
+      it 'returns all the metric names as strings' do
+        expect(ProjectMetrics.metric_names).to contain_exactly('code_climate_project_metrics',
+                                                               'github_project_metrics')
       end
     end
 
