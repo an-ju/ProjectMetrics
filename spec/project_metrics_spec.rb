@@ -1,6 +1,6 @@
 require 'project_metrics'
 
-describe ProjectMetrics do
+describe ProjectMetrics, :vcr  do
 
   after do
     described_class.reset
