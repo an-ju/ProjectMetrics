@@ -34,8 +34,8 @@ describe ProjectMetrics do
 
     describe '.report' do
       subject(:report) { described_class.report(['github/AgileVentures/WebsiteOne']) }
-      it 'can report scalar for a project metric' do
-        expect(report.first.first).to respond_to :scalar
+      it 'can report score for a project metric' do
+        expect(report.first.first).to respond_to :score
       end
       it 'can report image for a project metric' do
         expect(report.first.first).to respond_to :image
@@ -69,14 +69,14 @@ describe ProjectMetrics do
     describe '.report' do
       subject(:report) { described_class.report(['github/AgileVentures/WebsiteOne']).first }
 
-      it 'can report scalar for the first project metric' do
-        expect(report.first).to respond_to :scalar
+      it 'can report score for the first project metric' do
+        expect(report.first).to respond_to :score
       end
       it 'can report image for the first project metric' do
         expect(report.first).to respond_to :image
       end
-      it 'can report scalar for the second project metric' do
-        expect(report.second).to respond_to :scalar
+      it 'can report score for the second project metric' do
+        expect(report.second).to respond_to :score
       end
       it 'can report image for the second project metric' do
         expect(report.second).to respond_to :image

@@ -45,7 +45,7 @@ class ProjectMetrics
   def self.assemble_metrics_for project_ids
     project_ids.map do |project_id|
       @metrics.map do |source|
-         source.to_s.camelize.constantize.new project_id
+         source.to_s.camelize.constantize.new url: project_id
       end
     end
   end
