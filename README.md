@@ -1,38 +1,38 @@
-# project_scope_proof_of_concept
+# ProjectMetrics
 
 A plugin architecture to allow reporting over a range of project metrics.
 
 Configure the project metrics you want like so:
 
 ```rb
-  ProjectMetric.configure do 
+  ProjectMetrics.configure do 
     add_metric :code_climate_project_metrics
     add_metric :github_project_metrics
   end
 ```
 
-Then retrieve reports of those metrics for a number of projects like so:
+Then retrieve a list of configured metrics like so:
 
 ```rb
-  report = ProjectMetric.report(['https://github.com/AgileVentures/WebsiteOne',
-                                 'https://github.com/AgileVentures/LocalSupport'])
-
-  report.map{|p| [p.first.scalar, p.second.scalar]}
-                     
+  ProjectMetric.metric_names   # =>  ["github", "code_climate"]                     
 ```  
 
-which at this stage returns something like the following:
+Get individual project class names like so:
 
-```sh
-  => [[3.5, 939], [3.2, 313]]  
+```rb
+ProjectMetric.class_for("code_climate")  # => ProjectMetricCodeClimate
 ``` 
 
-ProjectMetric gems should follow these conventions:
+ProjectMetrics gems should follow these conventions:
 
-1. Gem name matches name of file and name of class e.g. the code_climate_project_metrics gem contains the file `lib/code_climate_project_metrics` which includes the class CodeClimateProjectMetrics.
-2. The gem class should define an initializer that takes a single value
-3. The gem class should define a method `scalar` that returns a numeric value representing the metric
-4. The gem class should define a method `image` that returns a visual representation of the metric in png, svg formats or similar
+1. Gem name matches name of file and name of class e.g. the project_metrics_code_climate gem contains the file `lib/project_metric_code_climate` which includes the class ProjectMetricCodeClimate.
+2. The gem class should define an initializer that takes the following arguments `credentials = {}, raw_data = nil`
+3. The gem class should define the following instance methods
+
+  - `score` that returns a numeric value representing the metric
+  - `image` that returns a visual representation of the metric in png, svg formats or similar
+  - `raw_data=` that can be used if "client" app has cached it, eg in a table. Setting or refreshing raw data implies score and image are now invalid
+  - `refresh` that sets raw data by refreshing from API endpoint
 
 
 TODO

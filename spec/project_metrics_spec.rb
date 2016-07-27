@@ -1,6 +1,6 @@
-require 'project_metric'
+require 'project_metrics'
 
-describe ProjectMetric do
+describe ProjectMetrics do
 
   after do
     described_class.reset
@@ -16,7 +16,7 @@ describe ProjectMetric do
 
     describe '.metrics' do
       it 'returns that single metric' do
-        expect(ProjectMetric.metrics).to contain_exactly(:code_climate_project_metrics)
+        expect(ProjectMetrics.metrics).to contain_exactly(:code_climate_project_metrics)
       end
     end
     describe '.report' do
@@ -42,7 +42,7 @@ describe ProjectMetric do
 
     describe '.metrics' do
       it 'returns all the metrics in a list' do
-        expect(ProjectMetric.metrics).to contain_exactly(:code_climate_project_metrics,
+        expect(ProjectMetrics.metrics).to contain_exactly(:code_climate_project_metrics,
                                                          :github_project_metrics)
       end
     end
