@@ -5,22 +5,22 @@ A plugin architecture to allow reporting over a range of project metrics.
 Configure the project metrics you want like so:
 
 ```rb
-  ProjectMetrics.configure do 
-    add_metric :code_climate_project_metrics
-    add_metric :github_project_metrics
-  end
+ProjectMetrics.configure do 
+  add_metric :code_climate_project_metrics
+  add_metric :github_project_metrics
+end
 ```
 
 Then retrieve a list of configured metrics like so:
 
 ```rb
-  ProjectMetric.metric_names   # =>  ["github", "code_climate"]                     
+ProjectMetrics.metric_names   # =>  ["github", "code_climate"]                     
 ```  
 
 Get individual project class names like so:
 
 ```rb
-ProjectMetric.class_for("code_climate")  # => ProjectMetricCodeClimate
+ProjectMetrics.class_for("code_climate")  # => ProjectMetricCodeClimate
 ``` 
 
 ProjectMetrics gems should follow these conventions:
