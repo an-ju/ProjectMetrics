@@ -1,8 +1,11 @@
 source 'https://rubygems.org'
 
-gem 'code_climate_project_metrics', git: 'https://github.com/AgileVentures/code_climate_project_metrics'
-gem 'github_project_metrics', git: 'https://github.com/AgileVentures/github_project_metrics'
 gem 'activesupport'
+
+group :development, :test do
+  gem 'project_metric_code_climate', git: 'https://github.com/AgileVentures/project_metric_code_climate'
+  gem 'project_metric_github', git: 'https://github.com/AgileVentures/project_metric_github'
+end
 
 group :test do
   gem 'rspec'

@@ -14,6 +14,11 @@ class ProjectMetrics
     @metrics.map &:to_s
   end
 
+  def self.class_for name
+    require_metrics
+    "ProjectMetric#{name.camelize}".constantize
+  end
+
   def self.report project_ids 
     require_metrics
     assemble_metrics_for project_ids

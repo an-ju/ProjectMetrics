@@ -20,7 +20,7 @@ ProjectMetrics.metric_names   # =>  ["github", "code_climate"]
 Get individual project class names like so:
 
 ```rb
-ProjectMetrics.class_for("code_climate")  # => ProjectMetricCodeClimate
+ProjectMetrics.class_for('code_climate')  # => ProjectMetricCodeClimate
 ``` 
 
 ProjectMetrics gems should follow these conventions:
