@@ -1,15 +1,15 @@
 GIT
   remote: https://github.com/AgileVentures/project_metric_code_climate
-  revision: 45643a3c958600b19ddd9ed4cdac70244008d9c6
+  revision: 6ee051511f1f9ecd07a6fa49181af4a0d9c63ef5
   specs:
-    project_metric_code_climate (0.0.2)
+    project_metric_code_climate (0.0.3)
       httparty
 
 GIT
   remote: https://github.com/AgileVentures/project_metric_github
-  revision: 4692972b4116126ea83742e8ebba7d43eac0b4f0
+  revision: 1ad733d0563755ba6425b1d0518b7da5a8683db2
   specs:
-    project_metric_github (0.0.2)
+    project_metric_github (0.0.3)
       octokit
 
 GEM
