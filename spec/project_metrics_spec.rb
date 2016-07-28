@@ -28,7 +28,7 @@ describe ProjectMetrics, :vcr  do
 
     describe '.metric_names' do
       it 'returns the single metric as a string' do
-        expect(ProjectMetrics.metric_names).to contain_exactly('project_metric_code_climate')
+        expect(ProjectMetrics.metric_names).to contain_exactly('code_climate')
       end
     end
 
@@ -61,8 +61,8 @@ describe ProjectMetrics, :vcr  do
 
     describe '.metric_names' do
       it 'returns all the metric names as strings' do
-        expect(ProjectMetrics.metric_names).to contain_exactly('project_metric_code_climate',
-                                                               'project_metric_github')
+        expect(ProjectMetrics.metric_names).to contain_exactly('code_climate',
+                                                               'github')
       end
     end
 

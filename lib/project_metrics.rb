@@ -11,7 +11,7 @@ class ProjectMetrics
   end
 
   def self.metric_names
-    @metrics.map &:to_s
+    @metrics.map(&:to_s).map{|s| s.gsub(/^project\_metric\_/,'')}
   end
 
   def self.class_for name
