@@ -1,64 +1,66 @@
 GIT
-  remote: https://github.com/AgileVentures/project_metric_code_climate
-  revision: 6ee051511f1f9ecd07a6fa49181af4a0d9c63ef5
+  remote: https://github.com/an-ju/project_metric_code_climate
+  revision: cbf1b65aa8a770947c1d35d3ddf0f086dd1e21a3
   specs:
-    project_metric_code_climate (0.0.3)
+    project_metric_code_climate (0.0.5)
       httparty
 
 GIT
-  remote: https://github.com/AgileVentures/project_metric_github
-  revision: 1ad733d0563755ba6425b1d0518b7da5a8683db2
+  remote: https://github.com/an-ju/project_metric_github
+  revision: 5bed52a13e90708537e10b33d8e9cdf87a45131b
   specs:
-    project_metric_github (0.0.3)
+    project_metric_github (0.1.0)
       octokit
 
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (5.0.0)
+    activesupport (5.1.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
-    addressable (2.4.0)
-    byebug (9.0.5)
-    concurrent-ruby (1.0.2)
+    addressable (2.5.1)
+      public_suffix (~> 2.0, >= 2.0.2)
+    byebug (9.0.6)
+    concurrent-ruby (1.0.5)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
-    diff-lcs (1.2.5)
-    faraday (0.9.2)
+    diff-lcs (1.3)
+    faraday (0.12.1)
       multipart-post (>= 1.2, < 3)
-    hashdiff (0.3.0)
-    httparty (0.14.0)
+    hashdiff (0.3.4)
+    httparty (0.15.5)
       multi_xml (>= 0.5.2)
-    i18n (0.7.0)
-    minitest (5.9.0)
-    multi_xml (0.5.5)
+    i18n (0.8.1)
+    minitest (5.10.2)
+    multi_xml (0.6.0)
     multipart-post (2.0.0)
-    octokit (4.3.0)
-      sawyer (~> 0.7.0, >= 0.5.3)
-    rspec (3.5.0)
-      rspec-core (~> 3.5.0)
-      rspec-expectations (~> 3.5.0)
-      rspec-mocks (~> 3.5.0)
-    rspec-core (3.5.1)
-      rspec-support (~> 3.5.0)
-    rspec-expectations (3.5.0)
+    octokit (4.7.0)
+      sawyer (~> 0.8.0, >= 0.5.3)
+    public_suffix (2.0.5)
+    rspec (3.6.0)
+      rspec-core (~> 3.6.0)
+      rspec-expectations (~> 3.6.0)
+      rspec-mocks (~> 3.6.0)
+    rspec-core (3.6.0)
+      rspec-support (~> 3.6.0)
+    rspec-expectations (3.6.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.5.0)
-    rspec-mocks (3.5.0)
+      rspec-support (~> 3.6.0)
+    rspec-mocks (3.6.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.5.0)
-    rspec-support (3.5.0)
+      rspec-support (~> 3.6.0)
+    rspec-support (3.6.0)
     safe_yaml (1.0.4)
-    sawyer (0.7.0)
-      addressable (>= 2.3.5, < 2.5)
-      faraday (~> 0.8, < 0.10)
-    thread_safe (0.3.5)
-    tzinfo (1.2.2)
+    sawyer (0.8.1)
+      addressable (>= 2.3.5, < 2.6)
+      faraday (~> 0.8, < 1.0)
+    thread_safe (0.3.6)
+    tzinfo (1.2.3)
       thread_safe (~> 0.1)
     vcr (3.0.3)
-    webmock (2.1.0)
+    webmock (3.0.1)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff
@@ -76,4 +78,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   1.12.5
+   1.14.6
