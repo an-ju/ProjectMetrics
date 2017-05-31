@@ -46,5 +46,14 @@ class ProjectMetrics
     end
   end
 
+  def self.add_hierarchy(hierarchy)
+    @hierarchies.update hierarchy
+  end
+
+  def self.hierarchies(key)
+    @hierarchies.key?(key) ? @hierarchies[key] : nil
+  end
+
   @metrics = []
+  @hierarchies = {}
 end

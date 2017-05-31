@@ -1,13 +1,13 @@
 GIT
   remote: https://github.com/an-ju/project_metric_code_climate
-  revision: cbf1b65aa8a770947c1d35d3ddf0f086dd1e21a3
+  revision: 703afc7be32621ccd0e7404446ed0f8cd946315e
   specs:
-    project_metric_code_climate (0.0.5)
+    project_metric_code_climate (0.1.0)
       httparty
 
 GIT
   remote: https://github.com/an-ju/project_metric_github
-  revision: 5bed52a13e90708537e10b33d8e9cdf87a45131b
+  revision: 15bd08639f20067e7375b48d153c6fbbffccadb7
   specs:
     project_metric_github (0.1.0)
       octokit
