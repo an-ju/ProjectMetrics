@@ -55,6 +55,10 @@ class ProjectMetrics
     @hierarchies.key?(key) ? @hierarchies[key] : nil
   end
 
+  def self.callback(key)
+    @callbacks.key?(key) ? @callbacks[key] : nil
+  end
+
   @metrics = []
   @callbacks = {}
   @hierarchies = {}
