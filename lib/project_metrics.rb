@@ -28,8 +28,9 @@ class ProjectMetrics
     @metrics = []
   end
 
-  def self.add_metric(metric)
+  def self.add_metric(metric, callback = nil)
     @metrics << metric
+    @callbacks[metric] = callback
   end
 
   def self.require_metrics
@@ -55,5 +56,6 @@ class ProjectMetrics
   end
 
   @metrics = []
+  @callbacks = {}
   @hierarchies = {}
 end
