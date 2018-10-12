@@ -4,7 +4,7 @@ describe ProjectMetrics, :vcr  do
 
   after do
     described_class.reset
-  end  
+  end
 
   before do
     described_class.configure do 
@@ -32,16 +32,6 @@ describe ProjectMetrics, :vcr  do
       end
     end
 
-    describe '.report' do
-      subject(:report) { described_class.report(['github/AgileVentures/WebsiteOne']) }
-      it 'can report score for a project metric' do
-        expect(report.first.first).to respond_to :score
-      end
-      it 'can report image for a project metric' do
-        expect(report.first.first).to respond_to :image
-      end
-    end
-
   end
 
   context 'when configured to report multiple metrics' do
@@ -65,22 +55,28 @@ describe ProjectMetrics, :vcr  do
                                                                'github')
       end
     end
+  end
 
-    # describe '.report' do
-    #   subject(:report) { described_class.report(['github/AgileVentures/WebsiteOne']).first }
-    #
-    #   it 'can report score for the first project metric' do
-    #     expect(report.first).to respond_to :score
-    #   end
-    #   it 'can report image for the first project metric' do
-    #     expect(report.first).to respond_to :image
-    #   end
-    #   it 'can report score for the second project metric' do
-    #     expect(report.second).to respond_to :score
-    #   end
-    #   it 'can report image for the second project metric' do
-    #     expect(report.second).to respond_to :image
-    #   end
-    # end
+  context 'when configured with hierarchies' do
+
+    before do
+      described_class.configure do
+        add_metric :project_metric_github
+      end
+    end
+
+    describe '.add_hierarchy' do
+      let(:hierarchy) {{l1: %I[project_metric_code_climate project_metric_github]}}
+
+      it 'updates the hierarchy' do
+        expect(ProjectMetrics.add_hierarchy(hierarchy)).to eq hierarchy
+      end
+
+      it 'returns the right hierarchy' do
+        ProjectMetrics.add_hierarchy hierarchy
+        expect(ProjectMetrics.hierarchies(:l1)).to eq hierarchy[:l1]
+      end
+
+    end
   end
 end
